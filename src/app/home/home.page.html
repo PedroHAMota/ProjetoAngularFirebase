@@ -30,10 +30,35 @@
               <form #atualizarForm="ngForm" (ngSubmit)="atualizar(atualizarForm.value)">
                 <ion-item>
                   <ion-input label="Nome" label-placement="floating" placeholder="Digite o Nome" ngModel name="Nome" type="text"></ion-input>
-                  <ion-input label="Sobrenome" label-placement="floating" placeholder="Digite o Sobrenome" ngModel name="Nome" type="text"></ion-input>
                 </ion-item>
                 <ion-item>
+                  <ion-input label="Sobrenome" label-placement="floating" placeholder="Digite o Sobrenome" ngModel name="Sobrenome" type="text"></ion-input> 
                 </ion-item>
+                  <ion-item>                 
+                  <ion-input label="Cargo" label-placement="floating" placeholder="Digite o Sobrenome" ngModel name="Cargo" type="text"></ion-input>
+                </ion-item> 
+                  <ion-item>
+                  <ion-input label="Data de Nascimento" label-placement="floating" placeholder="Digite o Sobrenome" ngModel name="DataNasc" type="date"></ion-input>
+                </ion-item>
+                  <ion-item>
+                  <ion-input label="Endereço" label-placement="floating" placeholder="Digite o Sobrenome" ngModel name="Endereco" type="text"></ion-input>
+                </ion-item>
+                  <ion-item>
+                  <ion-input label="Cidade" label-placement="floating" placeholder="Digite o Sobrenome" ngModel name="Cidade" type="text"></ion-input>
+                </ion-item>
+                  <ion-item>
+                  <ion-input label="Cep" label-placement="floating" placeholder="Digite o Sobrenome" ngModel name="Cep" type="text"></ion-input>
+                </ion-item>
+                  <ion-item>
+                  <ion-input label="Pais" label-placement="floating" placeholder="Digite o Sobrenome" ngModel name="Pais" type="text"></ion-input>
+                </ion-item>
+                  <ion-item>
+                  <ion-input label="Fone" label-placement="floating" placeholder="Digite o Sobrenome" ngModel name="Fone" type="text"></ion-input>
+                </ion-item>
+                  <ion-item>
+                  <ion-input label="Salário" label-placement="floating" placeholder="Digite o Sobrenome" ngModel name="Salairo" type="text"></ion-input>
+                </ion-item>
+
                 <ion-item lines="none">
                   <ion-button color="light" slot="end" type="submit">Atualizar</ion-button>
                 </ion-item>
@@ -50,13 +75,21 @@
     <ion-col>
       <ion-list>
         <ng-container *ngFor="let funcionario of this.funcionarios">
+          <ion-title>Dados do Funcionario</ion-title>
           <ion-item>
-            <ion-label> Nome do Funcionario: {{ funcionario.Nome }} {{ funcionario.Sobrenome }}</ion-label>
+            <ion-label class="dados"> Nome: {{ funcionario.Nome }} {{ funcionario.Sobrenome }} <br>Cargo : {{ funcionario.Cargo }} <br>Data de Nascimento: {{ funcionario.DataNasc }} <br>Endereço: {{ funcionario.Endereco}} <br>Cidade: {{ funcionario.Cidade }} <br> Cep: {{ funcionario.CEP }} <br>País: {{ funcionario.Pais }} <br>Telefone: {{ funcionario.Fone }} <br>Salário: {{ funcionario.Salario }}</ion-label>
             <ion-button (click)="remover(funcionario.CodFun)"><ion-icon name='trash'></ion-icon></ion-button>
             <ion-button expand="block" (click)="abrirModalAtualizar(funcionario.CodFun)"><ion-icon name="pencil-outline"></ion-icon></ion-button>
           </ion-item>
+          <hr class="line">
         </ng-container>
       </ion-list> 
     </ion-col>
   </ion-row>
+  <style>
+    .line{
+      border: 1.5px solid grey;
+      background-color: grey;
+    }
+  </style>
 </ion-content>

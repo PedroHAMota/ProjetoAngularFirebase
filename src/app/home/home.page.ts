@@ -58,7 +58,7 @@ export class HomePage {
 			}
 		)
     .then(response => response.json())
-    .then(response => {
+    .then(_response => {
       this.getFuncionarios();
     })
     .catch(erro => {
@@ -73,14 +73,14 @@ export class HomePage {
     this.isLoading = true;
 
     let funcionario = {
-      Nome : dados.Nome,
-      CodFun : this.codigo,
       Sobrenome : dados.Sobrenome,
+      CodFun : this.codigo,
+      Nome : dados.Nome,
       Cargo : dados.Cargo,
       DataNasc : dados.DataNasc,
       Endereco : dados.Endereco,
       Cidade : dados.Cidade,
-      Cep : dados.Cep,
+      CEP : dados.CEP,
       Pais : dados.Pais,
       Fone : dados.Fone,
       Salario : dados.Salario
@@ -98,7 +98,7 @@ export class HomePage {
 		)
     .then(response => response.json())
     .then(response => {
-      this.getFuncionarios();
+       this.getFuncionarios();
     })
     .catch(erro => {
       console.log(erro);
