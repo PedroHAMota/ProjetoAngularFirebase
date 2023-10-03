@@ -80,7 +80,7 @@ export class HomePage {
       DataNasc : dados.DataNasc,
       Endereco : dados.Endereco,
       Cidade : dados.Cidade,
-      CEP : dados.CEP,
+      Cep : dados.Cep,
       Pais : dados.Pais,
       Fone : dados.Fone,
       Salario : dados.Salario
@@ -89,7 +89,7 @@ export class HomePage {
 
     fetch('http://localhost/api2/funcionarios/atualizar.php',
 			{
-			  method: 'PUT',
+			  method: 'POST',
 			  headers: {
 			    'Content-Type': 'application/json',
 			  },
@@ -97,8 +97,8 @@ export class HomePage {
 			}
 		)
     .then(response => response.json())
-    .then(response => {
-       this.getFuncionarios();
+    .then(_response => {
+      this.getFuncionarios();
     })
     .catch(erro => {
       console.log(erro);
