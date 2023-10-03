@@ -15,6 +15,8 @@ export class HomePage {
   funcionarios: any;
   codigo : any;
 
+  parametro : any
+
   isModalOpen = false;
 
   setOpen(isOpen: boolean) {
@@ -108,4 +110,31 @@ export class HomePage {
     })
   }
 
+  
+  setParametro(dados: any){
+    console.log(dados.detail.value)
+  
+  }
+
+    consultar(dados: any){
+      let url = '';
+      if(this.parametro == 'Noe'){
+        url = ('http://localhost/api2/funcionarios/consultar_por_nome.php');
+      }
+    // this.isLoading = true;
+    // fetch('http://localhost/api2/funcionarios/consultar_por_nome.php')
+    // .then(response => response.json())
+    // .then(response => {
+    //   this.funcionarios = response['funcionarios']
+    //   console.log(response)
+    // })
+    // .catch(erro => {
+    //   console.log(erro);
+    // })
+    // .finally(()=>{
+    //   this.isLoading = false;
+    // })
+
+  }
 }
+

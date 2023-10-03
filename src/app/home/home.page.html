@@ -9,10 +9,10 @@
   </ion-row> -->
   <ion-header>
     <ion-toolbar>
-      <ion-checkbox class="box">Cargo</ion-checkbox>
-      <ion-checkbox class="box">Nome</ion-checkbox>
-      <ion-checkbox class="box">Telefone</ion-checkbox>
-      <ion-checkbox class="box">Cidade</ion-checkbox>
+      <ion-checkbox class="box" (ionChange)="consultar($event)" value="Cargo">Cargo</ion-checkbox>
+      <ion-checkbox class="box" (ionChange)="consultar($event)" value="Nome">Nome</ion-checkbox>
+      <ion-checkbox class="box" (ionChange)="consultar($event)" value="Telefone">Telefone</ion-checkbox>
+      <ion-checkbox class="box" (ionChange)="consultar($event)" value="Cidade">Cidade</ion-checkbox>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
