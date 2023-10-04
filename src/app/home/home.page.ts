@@ -118,7 +118,7 @@ export class HomePage {
 
     consultar(dados: any){
       let url = '';
-      if(this.parametro == 'Noe'){
+      if(this.parametro == 'Nome'){
         url = ('http://localhost/api2/funcionarios/consultar_por_nome.php');
       }
     // this.isLoading = true;
