@@ -18,6 +18,17 @@ export class HomePage {
   parametro : any
 
   isModalOpen = false;
+  
+  isModalOpening = false;
+
+  setOpening(isOpen: boolean) {
+    this.isModalOpening = isOpen;
+  }
+
+  modalInserir() {
+    this.isModalOpening = true;
+  }
+
 
   setOpen(isOpen: boolean) {
     this.isModalOpen = isOpen;
@@ -71,6 +82,43 @@ export class HomePage {
     })
   }
 
+  // atualizar(dados:any){
+  //   this.isLoading = true;
+  //   this.funcionario.Sobrenome = dados.Sobrenome
+  //   this.funcionario.CodFun = this.codigo
+  //   this.funcionario.Nome = dados.Nome
+  //   this.funcionario.Cargo = dados.Cargo
+  //   this.funcionario.DataNasc = dados.DataNasc
+  //   this.funcionario.Endereco = dados.Endereco
+  //   this.funcionario.Cidade = dados.Cidade
+  //   this.funcionario.Cep = dados.Cep
+  //   this.funcionario.Pais = dados.Pais
+  //   this.funcionario.Fone = dados.Fone
+  //   this.funcionario.Salario = dados.Salario
+
+  //   console.log(this.funcionario)
+
+  //   fetch('http://localhost/api2/funcionarios/atualizar.php',
+	// 		{
+	// 		  method: 'POST',
+	// 		  headers: {
+	// 		    'Content-Type': 'application/json',
+	// 		  },
+	// 		  body: JSON.stringify(this.funcionario)
+	// 		}
+	// 	)
+  //   .then(response => response.json())
+  //   .then(_response => {
+  //     this.getFuncionarios();
+  //   })
+  //   .catch(erro => {
+  //     console.log(erro);
+  //   })
+  //   .finally(()=>{
+  //     this.isLoading = false;
+  //   })
+  // }
+
   atualizar(dados:any){
     this.isLoading = true;
 
@@ -90,6 +138,45 @@ export class HomePage {
 
 
     fetch('http://localhost/api2/funcionarios/atualizar.php',
+			{
+			  method: 'POST',
+			  headers: {
+			    'Content-Type': 'application/json',
+			  },
+			  body: JSON.stringify(funcionario)
+			}
+		)
+    .then(response => response.json())
+    .then(_response => {
+      this.getFuncionarios();
+    })
+    .catch(erro => {
+      console.log(erro);
+    })
+    .finally(()=>{
+      this.isLoading = false;
+    })
+  }
+
+  inserir(dados:any){
+    this.isLoading = true;
+
+    let funcionario = {
+      Sobrenome : dados.Sobrenome,
+      CodFun : this.codigo,
+      Nome : dados.Nome,
+      Cargo : dados.Cargo,
+      DataNasc : dados.DataNasc,
+      Endereco : dados.Endereco,
+      Cidade : dados.Cidade,
+      Cep : dados.Cep,
+      Pais : dados.Pais,
+      Fone : dados.Fone,
+      Salario : dados.Salario
+    }
+
+
+    fetch('http://localhost/api2/funcionarios/inserir.php',
 			{
 			  method: 'POST',
 			  headers: {
