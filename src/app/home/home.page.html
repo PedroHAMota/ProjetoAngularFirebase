@@ -17,7 +17,7 @@
         <ion-checkbox class="box" (ionChange)="consultar($event)" value="Cidade">Cidade</ion-checkbox>
       </ion-col>
       <ion-col size="1">
-        <ion-button expand="block" (click)="modalInserir()"><ion-icon name="add-outline"></ion-icon></ion-button>
+        <ion-button expand="block" (click)="modalInserir(funcionarios)"><ion-icon name="add-outline"></ion-icon></ion-button>
       </ion-col>
     </ion-row>
     <ion-modal [isOpen]="isModalOpening">

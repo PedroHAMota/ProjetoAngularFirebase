@@ -25,8 +25,9 @@ export class HomePage {
     this.isModalOpening = isOpen;
   }
 
-  modalInserir() {
+  modalInserir(codigo: any) {
     this.isModalOpening = true;
+    this.codigo = codigo;
   }
 
 
