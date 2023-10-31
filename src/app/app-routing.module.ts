@@ -10,7 +10,11 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },  {
+    path: 'animacao',
+    loadChildren: () => import('./animacao/animacao.module').then( m => m.AnimacaoPageModule)
   }
+
 ];
 
 @NgModule({
